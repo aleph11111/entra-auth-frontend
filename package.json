@@ -1,0 +1,36 @@
+{
+  "name": "@cb/entra-auth-frontend",
+  "version": "0.0.0",
+  "description": "Microsoft Entra ID auth for Next.js App Router apps (Auth.js v5) — part of the @cb/* baseline toolkit.",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": ["dist", "src", "README.md"],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "vitest run --passWithNoTests",
+    "test:watch": "vitest",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "prepare": "npm run build"
+  },
+  "peerDependencies": {
+    "next": ">=14",
+    "next-auth": "5.0.0-beta.31"
+  },
+  "dependencies": {
+    "jose": "^5.9.0"
+  },
+  "devDependencies": {
+    "next": "^16.2.0",
+    "next-auth": "5.0.0-beta.31",
+    "typescript": "^5.6.0",
+    "vitest": "^2.1.0"
+  }
+}
