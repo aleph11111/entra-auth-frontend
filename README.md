@@ -7,7 +7,7 @@ Part of the `@cb/*` baseline toolkit. Install by git tag — there is no registr
 npm i "git+ssh://git@github.com/aleph11111/entra-auth-frontend.git#v0.1.0"
 ```
 
-Peer deps: `next >=14`, `next-auth@5.0.0-beta.31`.
+Peer deps: `next >=16`, `next-auth@5.0.0-beta.31`.
 
 ## The 5 wiring files your app writes
 
@@ -58,6 +58,8 @@ export const config = {
   ],
 };
 ```
+
+> **Note:** The per-IP callback rate limiter in `createAuthMiddleware` reads the client IP from the `x-forwarded-for` and `x-real-ip` headers (Next 16 removed `NextRequest.ip`). Deploy behind a reverse proxy that sets those headers; without them all requests share a single rate-limit bucket.
 
 **`src/components/.../Providers.tsx`** — wrap the tree in `<SessionProvider>` from `next-auth/react`.
 
