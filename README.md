@@ -7,7 +7,7 @@ Part of the `@cb/*` baseline toolkit. Install by git tag — there is no registr
 npm i "git+ssh://git@github.com/aleph11111/entra-auth-frontend.git#v0.1.0"
 ```
 
-Peer deps: `next >=16`, `next-auth@5.0.0-beta.31`.
+Peer deps: `next >=16`, `next-auth@^5.0.0-beta.32`.
 
 ## The 5 wiring files your app writes
 
